@@ -8,7 +8,7 @@ import DataTables from "views/admin/tables";
 import RTLDefault from "views/rtl/default";
 
 // Auth Imports
-import SignIn from "views/auth/SignIn";
+import Auth from "views/auth/auth";
 
 // Icon Imports
 import {
@@ -50,11 +50,11 @@ const routes = [
     component: <Profile />,
   },
   {
-    name: "Sign In",
+    name: "Auth",
     layout: "/auth",
-    path: "sign-in",
+    path: "",
     icon: <MdLock className="h-6 w-6" />,
-    component: <SignIn />,
+    component: <Auth />,
   },
   {
     name: "RTL Admin",

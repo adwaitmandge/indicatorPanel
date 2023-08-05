@@ -1,9 +1,16 @@
-import React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import Navbar from "components/navbar";
 import Sidebar from "components/sidebar";
 import Footer from "components/footer/Footer";
 import routes from "routes.js";
+import { UserState } from "Context/UserProvider";
 
 export default function Admin(props) {
   const { ...rest } = props;
@@ -19,6 +26,12 @@ export default function Admin(props) {
   React.useEffect(() => {
     getActiveRoute(routes);
   }, [location.pathname]);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    const user = localStorage.getItem("userInfo");
+    if (!user) navigate("/auth");
+  }, []);
 
   const getActiveRoute = (routes) => {
     let activeRoute = "Main Dashboard";
