@@ -19,7 +19,7 @@ const Twitter = () => {
   return (
     <div>
       {/* Charts */}
-      <div className="mt-5 grid-cols-1 gap-5 md:grid-cols-2">
+      <div className="mt-5 min-h-full grid-cols-1 gap-5 md:grid-cols-2">
         {/* Total Spent */}
         <RedditCheckTable
           columnsData={redditColumnsDataCheck}
@@ -29,8 +29,8 @@ const Twitter = () => {
 
       {/* Tables & Charts */}
 
+      {/* Check Table */}
       <div className="mt-5 grid-cols-1 gap-5 xl:grid-cols-2">
-        {/* Check Table */}
         <div className="mb-3">
           <Card extra="!p-[20px] text-center w-full">
             <div className="flex justify-between">
@@ -66,11 +66,7 @@ const Twitter = () => {
               </div>
             </div>
           </Card>
-
-          {/* Weekly Revenue */}
         </div>
-
-        {/* Traffic chart & Pie Chart */}
 
         <div className=" w-full rounded-[20px] md:grid-cols-2">
           <Card extra="flex flex-col bg-white w-full rounded-3xl py-6 px-2 text-center">

@@ -1,6 +1,6 @@
 export const twitterData = [
   {
-    name: "sheezy0",
+    name: "Barack Obama ARRESTED",
     number_of_posts: 100,
     percentage_fake: 5,
     spreaders: "COM 1",
@@ -8,7 +8,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "DavdBurnett",
+    name: "Mar-A-Lago Destroyed ",
     number_of_posts: 200,
     percentage_fake: 15,
     spreaders: "COM 2",
@@ -16,7 +16,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "lwtprettylaugh",
+    name: "78 Year Old CIA Agent",
     number_of_posts: 500,
     percentage_fake: 8,
     spreaders: "COM 4",
@@ -24,7 +24,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "douggarland",
+    name: "FBI Uncovers Evidence ",
     number_of_posts: 350,
     percentage_fake: 20,
     spreaders: "COM 1",
@@ -32,7 +32,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "WilfordGemma",
+    name: "Obama Goes To G20 Summit",
     number_of_posts: 150,
     percentage_fake: 12,
     spreaders: "COM 8",
@@ -40,7 +40,7 @@ export const twitterData = [
     ideology: "Conservative",
   },
   {
-    name: "monroevicious",
+    name: "Kardashians donate whopping sum to Las Vegas",
     number_of_posts: 250,
     percentage_fake: 3,
     spreaders: "COM 11",
@@ -48,7 +48,7 @@ export const twitterData = [
     ideology: "Conservative",
   },
   {
-    name: "Shutterstock",
+    name: "White House Chef Quits Because Trump Has Only Eaten Fast Food For 6 Months",
     number_of_posts: 450,
     percentage_fake: 5,
     spreaders: "COM 14",
@@ -56,7 +56,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "RobinMeske",
+    name: "Denzel Washington hit by Facebook fake news story",
     number_of_posts: 320,
     percentage_fake: 10,
     spreaders: "COM 16",
@@ -64,7 +64,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "pigzilla_",
+    name: "Contact Support",
     number_of_posts: 180,
     percentage_fake: 8,
     spreaders: "COM 18",
@@ -72,7 +72,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "GabrieleNeher",
+    name: "John Kerry Facing Prison",
     number_of_posts: 700,
     percentage_fake: 2,
     spreaders: ".COM 21",
@@ -80,7 +80,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User",
+    name: "Sarah Palin In A Coma After Hit And Run",
     number_of_posts: 1000,
     percentage_fake: 10,
     spreaders: "COM8",
@@ -88,7 +88,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User2",
+    name: "Bumble Bee Foods charged after man cooked with tuna",
     number_of_posts: 800,
     percentage_fake: 5,
     spreaders: "COM 9",
@@ -96,7 +96,7 @@ export const twitterData = [
     ideology: "Conservative",
   },
   {
-    name: "Twitter User3",
+    name: "Information for the Nation",
     number_of_posts: 450,
     percentage_fake: 8,
     spreaders: "COM 12",
@@ -104,7 +104,7 @@ export const twitterData = [
     ideology: "Conservative",
   },
   {
-    name: "Twitter User4",
+    name: "American News is under construction",
     number_of_posts: 550,
     percentage_fake: 12,
     spreaders: "COM 14",
@@ -112,7 +112,7 @@ export const twitterData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User5",
+    name: "Obama Secretly Flees US â€“ Leaves Stunning Evidence Behind",
     number_of_posts: 300,
     percentage_fake: 6,
     spreaders: "COM 20",

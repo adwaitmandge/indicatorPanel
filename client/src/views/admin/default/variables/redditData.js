@@ -1,6 +1,6 @@
 export const redditData = [
   {
-    name: "notchoosy1921",
+    name: "Texas church shooter was a militant atheist",
     number_of_posts: 101,
     percentage_fake: 1,
     spreaders: "COM 1",
@@ -8,7 +8,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "AaronSorkin",
+    name: "80% of black men in Atlanta are Homosexuals",
     number_of_posts: 194,
     percentage_fake: 11,
     spreaders: "COM 3",
@@ -16,7 +16,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "lwtprettylaugh",
+    name: "Pope Calls for World Wide Gun Confiscation Except for the UN",
     number_of_posts: 500,
     percentage_fake: 8,
     spreaders: "COM 4",
@@ -24,7 +24,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "douggarland",
+    name: "Miley Cyrus: 'Donald Trump Is a F--king Nightmare'",
     number_of_posts: 350,
     percentage_fake: 20,
     spreaders: "COM 1",
@@ -32,7 +32,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "WilfordGemma",
+    name: "Trump Removing Marines From the Navy",
     number_of_posts: 150,
     percentage_fake: 12,
     spreaders: "COM 8",
@@ -40,7 +40,7 @@ export const redditData = [
     ideology: "Conservative",
   },
   {
-    name: "monroevicious",
+    name: "Mueller Will Be Forced To Resign Over Pelosi Affair",
     number_of_posts: 250,
     percentage_fake: 3,
     spreaders: "COM 11",
@@ -48,7 +48,7 @@ export const redditData = [
     ideology: "Conservative",
   },
   {
-    name: "Shutterstock",
+    name: "BREAKING: Supreme Court Issues Its First Bench Warrant Ever",
     number_of_posts: 450,
     percentage_fake: 5,
     spreaders: "COM 14",
@@ -56,7 +56,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "RobinMeske",
+    name: "Clinton Foundation Largest Unprosecuted Charity Fraud in History-Charles Ortel",
     number_of_posts: 320,
     percentage_fake: 10,
     spreaders: "COM 16",
@@ -64,7 +64,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "pigzilla_",
+    name: "NASA Has Just Confirmed Earth Has A New Moon",
     number_of_posts: 180,
     percentage_fake: 8,
     spreaders: "COM 18",
@@ -80,7 +80,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User",
+    name: "UF requests to cancel Rivalry game against FSU",
     number_of_posts: 1000,
     percentage_fake: 10,
     spreaders: "COM8",
@@ -88,7 +88,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User2",
+    name: "BREAKING: US comedian Kevin Hart in critical condition after gory car crash",
     number_of_posts: 800,
     percentage_fake: 5,
     spreaders: "COM 9",
@@ -96,7 +96,7 @@ export const redditData = [
     ideology: "Conservative",
   },
   {
-    name: "Twitter User3",
+    name: "Manager killed 10 employees at checkers on 183st and 27ave",
     number_of_posts: 450,
     percentage_fake: 8,
     spreaders: "COM 12",
@@ -104,7 +104,7 @@ export const redditData = [
     ideology: "Conservative",
   },
   {
-    name: "Twitter User4",
+    name: "Ohio student suspended for staying in class during National Walkout Day",
     number_of_posts: 550,
     percentage_fake: 12,
     spreaders: "COM 14",
@@ -112,7 +112,7 @@ export const redditData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User5",
+    name: "Jason Aldean Gig Canceled After He Sells Out To Liberals On SNL",
     number_of_posts: 300,
     percentage_fake: 6,
     spreaders: "COM 20",

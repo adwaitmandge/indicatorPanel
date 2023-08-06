@@ -50,6 +50,26 @@ const Twitter = () => {
       <div className="mt-5 grid-cols-1 gap-5 xl:grid-cols-2">
         {/* Check Table */}
         <div className="mb-3">
+          <Card extra="flex flex-col bg-white w-full rounded-3xl py-6 px-2 text-center">
+            <div className="mb-auto flex items-center justify-between px-6">
+              <h2 className="text-lg font-bold text-navy-700 dark:text-white">
+                Category v/s Political Ideology
+              </h2>
+              <button className="!linear z-[1] flex items-center justify-center rounded-lg bg-lightPrimary p-2 text-brand-500 !transition !duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10">
+                <MdBarChart className="h-6 w-6" />
+              </button>
+            </div>
+
+            <div className="md:mt-16 lg:mt-0">
+              <div className="h-[250px] w-full xl:h-[350px]">
+                <BarChart
+                  chartData={twitterDataWeeklyRevenue}
+                  chartOptions={barChartOptionsWeeklyRevenue}
+                />
+              </div>
+            </div>
+          </Card>
+
           <Card extra="!p-[20px] text-center w-full">
             <div className="flex justify-between">
               <button className="linear mt-1 flex items-center justify-center gap-2 rounded-lg bg-lightPrimary p-2 text-gray-600 transition duration-200 hover:cursor-pointer hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:hover:opacity-90 dark:active:opacity-80">

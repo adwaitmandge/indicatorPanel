@@ -1,6 +1,6 @@
 export const instagramData = [
   {
-    name: "choosy69",
+    name: "CNN To Permanently Close Its Doors As Ratings Plunge 30 Percent",
     number_of_posts: 101,
     percentage_fake: 1,
     spreaders: "COM 1",
@@ -8,7 +8,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "AaronSorkin",
+    name: "Eric Trump: It would be 'foolish' for my dad to release tax returns",
     number_of_posts: 194,
     percentage_fake: 11,
     spreaders: "COM 3",
@@ -16,7 +16,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "lwtprettylaugh",
+    name: "BREAKING! Roy Mooreâ€™s Accuser Worked for Democratic Leaders and Is Actively Campaigning for Mooreâ€™s Opponent â‹† Activist Mommy",
     number_of_posts: 500,
     percentage_fake: 8,
     spreaders: "COM 4",
@@ -24,7 +24,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "douggarland",
+    name: "Kurt Russel Just SHOWED Overpaid Celebs Itâ€™s Time To Shut Up About Trump â€“ Hits Them Where It Hurts!",
     number_of_posts: 350,
     percentage_fake: 20,
     spreaders: "COM 1",
@@ -32,7 +32,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "WilfordGemma",
+    name: "BREAKING: 60 People Just Found Dead In Ohio",
     number_of_posts: 150,
     percentage_fake: 12,
     spreaders: "COM 8",
@@ -40,7 +40,7 @@ export const instagramData = [
     ideology: "Conservative",
   },
   {
-    name: "monroevicious",
+    name: "Denzel Washington: With Trump we avoided war with Russia and Orwellian Police State",
     number_of_posts: 250,
     percentage_fake: 3,
     spreaders: "COM 11",
@@ -48,7 +48,7 @@ export const instagramData = [
     ideology: "Conservative",
   },
   {
-    name: "Shutterstock",
+    name: "Oprah Winfrey: The Butler, racism and Obama",
     number_of_posts: 450,
     percentage_fake: 5,
     spreaders: "COM 14",
@@ -56,7 +56,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "RobinMeske",
+    name: "USA: Mysterious Nazi submarine from WWII discovered in Great Lakes!",
     number_of_posts: 320,
     percentage_fake: 10,
     spreaders: "COM 16",
@@ -64,7 +64,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "pigzilla_",
+    name: "Computer Models Show IRMA Destroying New York City On Sept. 10",
     number_of_posts: 180,
     percentage_fake: 8,
     spreaders: "COM 18",
@@ -72,7 +72,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "GabrieleNeher",
+    name: "NASA Will Pay You $100,000 To Stay In Bed For 60 Days!",
     number_of_posts: 700,
     percentage_fake: 2,
     spreaders: ".COM 21",
@@ -80,7 +80,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User",
+    name: "BREAKING: President Trump Pardons Kim Davis",
     number_of_posts: 1000,
     percentage_fake: 10,
     spreaders: "COM8",
@@ -88,7 +88,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User2",
+    name: "Last in Queen Elizabeth II's line of corgis dies, says British press",
     number_of_posts: 800,
     percentage_fake: 5,
     spreaders: "COM 9",
@@ -96,7 +96,7 @@ export const instagramData = [
     ideology: "Conservative",
   },
   {
-    name: "Twitter User3",
+    name: "Alabama football Crimson Tide disqualified from national championship",
     number_of_posts: 450,
     percentage_fake: 8,
     spreaders: "COM 12",
@@ -104,7 +104,7 @@ export const instagramData = [
     ideology: "Conservative",
   },
   {
-    name: "Twitter User4",
+    name: "Georgia Mosque KEEPS Hurricane Harvey Donations, Will Send To Syrian Refugees Instead",
     number_of_posts: 550,
     percentage_fake: 12,
     spreaders: "COM 14",
@@ -112,7 +112,7 @@ export const instagramData = [
     ideology: "Progressive Left",
   },
   {
-    name: "Twitter User5",
+    name: "World's most popular candy to be removed from shelves by October 2017!",
     number_of_posts: 300,
     percentage_fake: 6,
     spreaders: "COM 20",
