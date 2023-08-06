@@ -1,6 +1,7 @@
 import Card from "components/card";
 
 const Widget = ({ icon, title, subtitle }) => {
+  
   return (
     <Card extra="!flex-row flex-grow items-center rounded-[20px]">
       <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
