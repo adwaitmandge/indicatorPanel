@@ -161,6 +161,19 @@ export const barChartDataWeeklyRevenue = [
   },
 ];
 
+export const twitterDataWeeklyRevenue = [
+  {
+    name: "FAKE",
+    data: [410, 601, 219, 300, 371, 443, 184, 473, 375],
+    color: "#FE0000",
+  },
+  {
+    name: "REAL",
+    data: [219, 109, 501, 284, 371, 258, 598, 289, 390],
+    color: "#55FE00",
+  },
+];
+
 export const barChartOptionsWeeklyRevenue = {
   chart: {
     stacked: true,
@@ -270,6 +283,19 @@ export const lineChartDataTotalSpent = [
   {
     name: "REAL",
     data: [300, 400, 214, 460, 180, 460],
+    color: "#6AD2Fa",
+  },
+];
+
+export const twitterDataTotalSpent = [
+  {
+    name: "FAKE",
+    data: [45, 63, 77, 72, 31, 51],
+    color: "#4318FF",
+  },
+  {
+    name: "REAL",
+    data: [43, 42, 76, 65, 69, 84],
     color: "#6AD2Fa",
   },
 ];

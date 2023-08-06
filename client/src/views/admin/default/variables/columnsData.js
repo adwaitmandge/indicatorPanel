@@ -36,6 +36,86 @@ export const columnsDataCheck = [
   },
 ];
 
+export const twitterColumnsDataCheck = [
+  {
+    Header: "Name",
+    accessor: "name",
+  },
+  {
+    Header: "Posts",
+    accessor: "number_of_posts",
+  },
+  {
+    Header: "%Fake",
+    accessor: "percentage_fake",
+  },
+  {
+    Header: "Spreaders",
+    accessor: "spreaders",
+  },
+  {
+    Header: "Victims",
+    accessor: "victims",
+  },
+  {
+    Header: "Ideology",
+    accessor: "ideology",
+  },
+];
+
+export const instagramColumnsDataCheck = [
+  {
+    Header: "Name",
+    accessor: "name",
+  },
+  {
+    Header: "Posts",
+    accessor: "number_of_posts",
+  },
+  {
+    Header: "%Fake",
+    accessor: "percentage_fake",
+  },
+  {
+    Header: "Spreaders",
+    accessor: "spreaders",
+  },
+  {
+    Header: "Victims",
+    accessor: "victims",
+  },
+  {
+    Header: "Ideology",
+    accessor: "ideology",
+  },
+];
+export const redditColumnsDataCheck = [
+  {
+    Header: "Name",
+    accessor: "name",
+  },
+  {
+    Header: "Posts",
+    accessor: "number_of_posts",
+  },
+  {
+    Header: "%Fake",
+    accessor: "percentage_fake",
+  },
+  {
+    Header: "Spreaders",
+    accessor: "spreaders",
+  },
+  {
+    Header: "Victims",
+    accessor: "victims",
+  },
+  {
+    Header: "Ideology",
+    accessor: "ideology",
+  },
+];
+
 export const columnsDataColumns = [
   {
     Header: "NAME",

@@ -10,7 +10,7 @@ import {
   useTable,
 } from "react-table";
 
-const CheckTable = (props) => {
+const TwitterCheckTable = (props) => {
   const { columnsData, tableData } = props;
 
   const columns = useMemo(() => columnsData, [columnsData]);
@@ -78,31 +78,43 @@ const CheckTable = (props) => {
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
-                    if (cell.column.Header === "SOCIAL") {
+                    if (cell.column.Header === "Name") {
                       data = (
                         <div className="flex items-center gap-2">
-                          <Checkbox />
+                          {/* <Checkbox /> */}
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
-                            {cell.value[0]}
+                            {cell.value}
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "ACTIVITY(%)") {
+                    } else if (cell.column.Header === "Posts") {
                       data = (
                         <div className="flex items-center">
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
-                            {cell.value}%
+                            {cell.value}
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "FAKE") {
+                    } else if (cell.column.Header === "%Fake") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {" "}
                           {cell.value}{" "}
                         </p>
                       );
-                    } else if (cell.column.Header === "DATE") {
+                    } else if (cell.column.Header === "Spreaders") {
+                      data = (
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">
+                          {cell.value}
+                        </p>
+                      );
+                    } else if (cell.column.Header === "Victims") {
+                      data = (
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">
+                          {cell.value}
+                        </p>
+                      );
+                    } else if (cell.column.Header === "Ideology") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}
@@ -129,4 +141,4 @@ const CheckTable = (props) => {
   );
 };
 
-export default CheckTable;
+export default TwitterCheckTable;

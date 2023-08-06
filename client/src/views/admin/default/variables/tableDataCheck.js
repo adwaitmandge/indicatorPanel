@@ -22,7 +22,7 @@ const tableDataCheck = [
     quantity: 858,
     date: "Oct 24, 2022",
     progress: 100,
-  }
+  },
 ];
 
 export default tableDataCheck;
