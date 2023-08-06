@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 function Card(props) {
   const { variant, extra, children, ...rest } = props;
   return (
