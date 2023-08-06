@@ -21,7 +21,7 @@ import {
 import Twitter from "views/analytics/Twitter";
 import Instagram from "views/analytics/Instagram";
 import Reddit from "views/analytics/Reddit";
-
+import QueryPage from "views/user/QueryPage";
 const routes = [
   {
     name: "Social Media Analytics",
@@ -30,6 +30,14 @@ const routes = [
     icon: <MdHome className="h-6 w-6" />,
     component: <MainDashboard />,
   },
+  {
+    name: "Query Page",
+    layout: "/user",
+    path: "query",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <QueryPage/>,
+  },
+
   {
     name: "NFT Marketplace",
     layout: "/admin",

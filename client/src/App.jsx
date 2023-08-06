@@ -5,6 +5,8 @@ import RtlLayout from "layouts/rtl";
 import AdminLayout from "layouts/admin";
 import AuthLayout from "layouts/auth";
 import AnalyticsLayout from "layouts/analytics";
+import UserLayout from "layouts/user";
+
 
 const App = () => {
   return (
@@ -14,6 +16,7 @@ const App = () => {
       <Route path="rtl/*" element={<RtlLayout />} />
       <Route path="/" element={<Navigate to="/auth" replace />} />
       <Route path="analytics/*" element={<AnalyticsLayout />} />
+      <Route path="user/*" element={<UserLayout/>} />
     </Routes>
   );
 };
