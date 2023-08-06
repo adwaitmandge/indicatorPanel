@@ -15,47 +15,15 @@ import TaskCard from "views/admin/default/components/TaskCard";
 import tableDataCheck from "views/admin/default/variables/tableDataCheck";
 import tableDataComplex from "views/admin/default/variables/tableDataComplex";
 import ComplexTable from "views/admin/default/components/ComplexTable";
+import Card from "components/card";
+import BarChart from "components/charts/BarChart";
+import { barChartDataWeeklyRevenue } from "variables/charts";
+import { barChartOptionsWeeklyRevenue } from "variables/charts";
 
 const Twitter = () => {
   return (
     <div>
-      {/* Card widget */}
-
-      <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={"Earnings"}
-          subtitle={"$340.5"}
-        />
-        <Widget
-          icon={<IoDocuments className="h-6 w-6" />}
-          title={"Spend this month"}
-          subtitle={"$642.39"}
-        />
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={"Sales"}
-          subtitle={"$574.34"}
-        />
-        <Widget
-          icon={<MdDashboard className="h-6 w-6" />}
-          title={"Your Balance"}
-          subtitle={"$1,000"}
-        />
-        <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
-          title={"New Tasks"}
-          subtitle={"145"}
-        />
-        <Widget
-          icon={<IoMdHome className="h-6 w-6" />}
-          title={"Total Projects"}
-          subtitle={"$2433"}
-        />
-      </div>
-
       {/* Charts */}
-
       <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
         <TotalSpent />
         <WeeklyRevenue />
@@ -74,25 +42,26 @@ const Twitter = () => {
 
         {/* Traffic chart & Pie Chart */}
 
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <DailyTraffic />
-          <PieChartCard />
-        </div>
+        <div className=" w-full rounded-[20px] md:grid-cols-2">
+          <Card extra="flex flex-col bg-white w-full rounded-3xl py-6 px-2 text-center">
+            <div className="mb-auto flex items-center justify-between px-6">
+              <h2 className="text-lg font-bold text-navy-700 dark:text-white">
+                Political Ideology
+              </h2>
+              <button className="!linear z-[1] flex items-center justify-center rounded-lg bg-lightPrimary p-2 text-brand-500 !transition !duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10">
+                <MdBarChart className="h-6 w-6" />
+              </button>
+            </div>
 
-        {/* Complex Table , Task & Calendar */}
-
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        />
-
-        {/* Task chart & Calendar */}
-
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <TaskCard />
-          <div className="grid grid-cols-1 rounded-[20px]">
-            <MiniCalendar />
-          </div>
+            <div className="md:mt-16 lg:mt-0">
+              <div className="h-[250px] w-full xl:h-[350px]">
+                <BarChart
+                  chartData={barChartDataWeeklyRevenue}
+                  chartOptions={barChartOptionsWeeklyRevenue}
+                />
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </div>

@@ -17,6 +17,7 @@ import tableDataCheck from "./variables/tableDataCheck.js";
 import tableDataComplex from "./variables/tableDataComplex.js";
 import ComplexTable from "./components/ComplexTable";
 import { useNavigate } from "react-router-dom";
+import { SocialIcon } from "react-social-icons";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -26,17 +27,20 @@ const Dashboard = () => {
 
       <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
         <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
+          pathname={"/analytics/twitter"}
+          icon={<SocialIcon network="twitter" />}
           title={"Twitter"}
           subtitle={"6.9%"}
         />
         <Widget
-          icon={<IoDocuments className="h-6 w-6" />}
+          pathname={"/analytics/instagram"}
+          icon={<SocialIcon network="instagram" />}
           title={"Instagram"}
           subtitle={"7.12%"}
         />
         <Widget
-          icon={<MdBarChart className="h-7 w-7" />}
+          pathname={"/analytics/reddit"}
+          icon={<SocialIcon network="reddit" />}
           title={"Reddit"}
           subtitle={"5.1%"}
         />
