@@ -12,7 +12,7 @@ import Footer from "components/footer/Footer";
 import routes from "routes.js";
 import { UserState } from "Context/UserProvider";
 
-export default function Admin(props) {
+export default function AnalyticsLayout(props) {
   const { ...rest } = props;
   const location = useLocation();
   const [open, setOpen] = React.useState(true);
@@ -34,7 +34,7 @@ export default function Admin(props) {
   }, []);
 
   const getActiveRoute = (routes) => {
-    let activeRoute = "Main Dashboard";
+    let activeRoute = "Twitter Analytics";
     for (let i = 0; i < routes.length; i++) {
       if (
         window.location.href.indexOf(
@@ -60,7 +60,7 @@ export default function Admin(props) {
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
+      if (prop.layout === "/analytics") {
         return (
           <Route path={`/${prop.path}`} element={prop.component} key={key} />
         );
@@ -92,11 +92,7 @@ export default function Admin(props) {
             <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
               <Routes>
                 {getRoutes(routes)}
-
-                <Route
-                  path="/"
-                  element={<Navigate to="/admin/default" replace />}
-                />
+                <Route path="/" element={<Navigate to="/auth" replace />} />
               </Routes>
             </div>
             <div className="p-3">

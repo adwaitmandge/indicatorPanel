@@ -19,10 +19,12 @@ import {
   MdLock,
 } from "react-icons/md";
 import Twitter from "views/analytics/Twitter";
+import Instagram from "views/analytics/Instagram";
+import Reddit from "views/analytics/Reddit";
 
 const routes = [
   {
-    name: "Main Dashboard",
+    name: "Social Media Analytics",
     layout: "/admin",
     path: "default",
     icon: <MdHome className="h-6 w-6" />,
@@ -63,6 +65,20 @@ const routes = [
     path: "twitter",
     icon: <MdLock className="h-6 w-6" />,
     component: <Twitter />,
+  },
+  {
+    name: "Instagram Analytics",
+    layout: "/analytics",
+    path: "instagram",
+    icon: <MdLock className="h-6 w-6" />,
+    component: <Instagram />,
+  },
+  {
+    name: "Reddit Analytics",
+    layout: "/analytics",
+    path: "reddit",
+    icon: <MdLock className="h-6 w-6" />,
+    component: <Reddit />,
   },
   {
     name: "RTL Admin",

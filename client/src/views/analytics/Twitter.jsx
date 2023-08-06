@@ -1,37 +1,20 @@
-// MiniCalendar
-// WeeklyRevenue
-// TotalSpent
-// PieChartCard
-// IoMdHome
-// IoDocuments
-// MdBarChart, MdDashboard
-// columnsDataCheck, columnsDataComplex
-
 import MiniCalendar from "components/calendar/MiniCalendar";
 import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
 import TotalSpent from "views/admin/default/components/TotalSpent";
-import PieChartCard from "views/admin/default/components/PieChartCard";
+import PieChartCard from "views/admin/default/components/PieChartCard.jsx";
 import { IoMdHome } from "react-icons/io";
 import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
-import { columnsDataCheck } from "views/admin/default/variables/columnsData";
-import { columnsDataComplex } from "views/admin/default/variables/columnsData";
+import { columnsDataCheck } from "views/admin/default/variables/columnsData.js";
+import { columnsDataComplex } from "views/admin/default/variables/columnsData.js";
 
 import Widget from "components/widget/Widget";
 import CheckTable from "views/admin/default/components/CheckTable";
-import ComplexTable from "views/admin/default/components/ComplexTable";
 import DailyTraffic from "views/admin/default/components/DailyTraffic";
 import TaskCard from "views/admin/default/components/TaskCard";
 import tableDataCheck from "views/admin/default/variables/tableDataCheck";
 import tableDataComplex from "views/admin/default/variables/tableDataComplex";
-
-// Widget
-// CheckTable
-// ComplexTable
-// DailyTraffic
-// TaskCard
-// tableDataCheck
-// tableDataComplex
+import ComplexTable from "views/admin/default/components/ComplexTable";
 
 const Twitter = () => {
   return (

@@ -46,10 +46,7 @@ export default function Auth() {
                 </Link> */}
                 <Routes>
                   {getRoutes(routes)}
-                  <Route
-                    path="/"
-                    element={<Navigate to="/auth/sign-in" replace />}
-                  />
+                  <Route path="/" element={<Navigate to="/auth/" replace />} />
                 </Routes>
                 <div className="absolute right-0 hidden h-full min-h-screen md:block lg:w-[49vw] 2xl:w-[44vw]">
                   <div
