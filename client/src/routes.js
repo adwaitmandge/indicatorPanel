@@ -18,6 +18,7 @@ import {
   MdPerson,
   MdLock,
 } from "react-icons/md";
+import Twitter from "views/analytics/Twitter";
 
 const routes = [
   {
@@ -55,6 +56,13 @@ const routes = [
     path: "",
     icon: <MdLock className="h-6 w-6" />,
     component: <Auth />,
+  },
+  {
+    name: "Twitter Analytics",
+    layout: "/analytics",
+    path: "twitter",
+    icon: <MdLock className="h-6 w-6" />,
+    component: <Twitter />,
   },
   {
     name: "RTL Admin",
