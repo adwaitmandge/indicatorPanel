@@ -87,7 +87,7 @@ const CheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "PROGRESS") {
+                    } else if (cell.column.Header === "ACTIVITY(%)") {
                       data = (
                         <div className="flex items-center">
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -95,7 +95,7 @@ const CheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "QUANTITY") {
+                    } else if (cell.column.Header === "FAKE") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {" "}

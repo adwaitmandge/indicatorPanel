@@ -1,7 +1,7 @@
 export const barChartDataDailyTraffic = [
   {
-    name: "Daily Traffic",
-    data: [20, 30, 40, 20, 45, 50, 30],
+    name: "Daily Proportion",
+    data: [20, 30, 40, 20],
   },
 ];
 
@@ -26,7 +26,7 @@ export const barChartOptionsDailyTraffic = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["00", "04", "08", "12", "14", "16", "18"],
+    categories: ["Instagram", "Facebook", "Reddit", "Twitter"],
     show: false,
     labels: {
       show: true,
@@ -103,8 +103,8 @@ export const barChartOptionsDailyTraffic = {
 };
 
 export const pieChartOptions = {
-  labels: ["Your files", "System", "Empty"],
-  colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+  labels: ["Instagram", "Facebook", "Reddit"],
+  colors: ["#4318FF", "#6AD2FF", "#030C19"],
   chart: {
     width: "50px",
   },
@@ -150,19 +150,14 @@ export const pieChartData = [63, 25, 12];
 
 export const barChartDataWeeklyRevenue = [
   {
-    name: "PRODUCT A",
+    name: "FAKE",
     data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
-    color: "#6AD2Fa",
+    color: "#FE0000",
   },
   {
-    name: "PRODUCT B",
+    name: "REAL",
     data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
-    color: "#4318FF",
-  },
-  {
-    name: "PRODUCT C",
-    data: [400, 370, 330, 390, 320, 350, 360, 320, 380],
-    color: "#EFF4FB",
+    color: "#55FE00",
   },
 ];
 
@@ -189,7 +184,17 @@ export const barChartOptionsWeeklyRevenue = {
     },
   },
   xaxis: {
-    categories: ["17", "18", "19", "20", "21", "22", "23", "24", "25"],
+    categories: [
+      "Celebs",
+      "Politics",
+      "Education",
+      "Health",
+      "Technology",
+      "Religion",
+      "Fashion",
+      "Economy",
+      "General",
+    ],
     show: false,
     labels: {
       show: true,
@@ -258,20 +263,20 @@ export const barChartOptionsWeeklyRevenue = {
 
 export const lineChartDataTotalSpent = [
   {
-    name: "Revenue",
-    data: [50, 64, 48, 66, 49, 68],
+    name: "FAKE",
+    data: [150, 604, 48, 606, 49, 68],
     color: "#4318FF",
   },
   {
-    name: "Profit",
-    data: [30, 40, 24, 46, 20, 46],
-    color: "#6AD2FF",
+    name: "REAL",
+    data: [300, 400, 214, 460, 180, 460],
+    color: "#6AD2Fa",
   },
 ];
 
 export const lineChartOptionsTotalSpent = {
   legend: {
-    show: false,
+    show: true,
   },
 
   theme: {
