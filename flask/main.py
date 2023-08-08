@@ -1,3 +1,4 @@
+from helpers import fact_check, one_word
 from newspaper import Article
 import openai
 import nltk
@@ -15,6 +16,9 @@ import pytesseract
 from transformers import pipeline
 import os
 from os import listdir
+from transformers import pipeline
+zero_shot_classfier = pipeline("zero-shot-classification")
+
 
 sales_img_captioning = pipeline(
     "image-to-text", model="Salesforce/blip-image-captioning-large")
@@ -36,7 +40,7 @@ api = Api(app)
 # })
 
 cors = CORS(app, resources={
-    r"/imagegenerator": {"origins": "*"}
+    r"/imagegenerator": {"origins": "*"}, r"/classify": {"origins": "*"}, r"/fact_check": {"origins": "*"}
 })
 
 # cors.init_app(app)
@@ -56,20 +60,38 @@ Original file is located at
 # !pip install nltk
 # !pip install newspaper3k
 # !pip install openai
-# from helpers import fact_check
 
 nltk.download('punkt')
 
 # @cross_origin(supports_credentials=True)
 # ********************************* Authenticating a User Query ***********************************
 # ************************************************************************************************
-# @app.route('/factcheck',methods=['POST'])
-# def verifier():
-#     print("Inside the verifier at the backend")
-#     data = request.data
-#     print("The request body is", data)
-#     result = fact_check(data)
-#     return jsonify({"result":result})
+
+
+@app.route('/factcheck', methods=['POST'])
+def verifier():
+    print("Inside the verifier at the backend")
+    data = request.data
+    print("The request body is", data)
+    result = fact_check(data)
+    return jsonify({"result": result})
+
+
+def news_type(text):
+    final_classification = zero_shot_classfier(
+        text, candidate_labels=["misinformation or fake news", "factual news"])
+    return final_classification['labels'][0]
+
+
+@app.route('/classify', methods=['POST'])
+def classifier():
+    print("Inside the classifier")
+    query = request.data.decode()
+    print(query)
+    result = one_word(query)
+    print(result)
+    return jsonify({"result": result})
+
 
 folder_dir = "C:/Users/Adwait/OneDrive/Desktop/builds/kavach/horizon-tailwind-react/flask/images"
 
@@ -112,7 +134,7 @@ def text_representation_of_images(images_list):
 #     urllib.request.urlretrieve(finalURL, f'/images/{num}.png')
 #     return jsonify({"result": "name"})
 
-@app.route('/imagegenerator', methods=['POST', 'OPTIONS'])
+@ app.route('/imagegenerator', methods=['POST', 'OPTIONS'])
 def imageGenerator():
     if request.method == 'OPTIONS':
         # Handle preflight request

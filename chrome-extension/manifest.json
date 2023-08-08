@@ -17,7 +17,7 @@
     },
     "content_scripts":[
         {
-            "matches":["https://twitter.com/home"],
+            "matches":["https://twitter.com/adricheyyy"],
             "js":["twitterScript.js"]
         },
         {
