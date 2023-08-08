@@ -1,4 +1,4 @@
-from helpers import fact_check, one_word
+from helpers import fact_check, one_word, get_text, category_identifier, l_by_r, type_of_views, type_of_propaganda, news_type, hatespeech, clickbait, sentiment_analysis, extract_keywords
 from newspaper import Article
 import openai
 import nltk
@@ -18,7 +18,6 @@ import os
 from os import listdir
 from transformers import pipeline
 zero_shot_classfier = pipeline("zero-shot-classification")
-
 
 sales_img_captioning = pipeline(
     "image-to-text", model="Salesforce/blip-image-captioning-large")
@@ -96,6 +95,18 @@ def classifier():
 folder_dir = "C:/Users/Adwait/OneDrive/Desktop/builds/kavach/horizon-tailwind-react/flask/images"
 
 
+def delete_files_in_directory(directory_path):
+    try:
+        files = os.listdir(directory_path)
+        for file in files:
+            file_path = os.path.join(directory_path, file)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+        print("All files deleted successfully.")
+    except OSError:
+        print("Error occurred while deleting files.")
+
+
 def images_to_ocr(image_filename):
     full_image_path = os.path.join(folder_dir, image_filename)
     img = PIL.Image.open(full_image_path)
@@ -111,15 +122,18 @@ def image_caption_generation(images):
     return result
 
 
-def text_representation_of_images(images_list):
+def text_representation_of_images(image):
     result = ""
-    for image_filename in images_list:
-        # ocr_text = images_to_ocr(image_filename)
-        full_image_path = os.path.join(folder_dir, image_filename)
+    ocr_text = images_to_ocr(image)
+    combined_text = ''
+    if len(ocr_text) <= 4:
+        full_image_path = os.path.join(folder_dir, image)
         caption = image_caption_generation(full_image_path)
-        # combined_text = ocr_text + " " + caption
         combined_text = caption
-        result += combined_text + "\n"
+    else:
+        combined_text = ocr_text
+    result += combined_text + "\n"
+    delete_files_in_directory(folder_dir)
     return result
 
 
@@ -134,6 +148,22 @@ def text_representation_of_images(images_list):
 #     urllib.request.urlretrieve(finalURL, f'/images/{num}.png')
 #     return jsonify({"result": "name"})
 
+def classify_generated_caption(query):
+    category = category_identifier(query)
+    lbyr = l_by_r(query)
+    viewType = type_of_views(query)
+    newsType = news_type(query)
+    propogandaType = type_of_propaganda(query)
+    speechType = hatespeech(query)
+    clickbaitType = clickbait(query)
+    sentiment = sentiment_analysis(query)
+    impKeywords = extract_keywords(query)
+    data = [category, lbyr, viewType, newsType, propogandaType,
+            speechType, clickbaitType, sentiment, impKeywords]
+
+    return data
+
+
 @ app.route('/imagegenerator', methods=['POST', 'OPTIONS'])
 def imageGenerator():
     if request.method == 'OPTIONS':
@@ -147,18 +177,38 @@ def imageGenerator():
         num = random.randrange(10000000)
         urllib.request.urlretrieve(
             finalURL, f'C:/Users/Adwait/OneDrive/Desktop/builds/kavach/horizon-tailwind-react/flask/images/{num}.png')
-        images_list = []
+        # images_list = []
 
-        for images in os.listdir(folder_dir):
-            if (images.endswith(".png")):
-                images_list.append(images)
+        # for images in os.listdir(folder_dir):
+        #     if (images.endswith(".png")):
+        #         images_list.append(images)
 
     # response = jsonify({"result": text_representation_of_images(images_list)})
-    result = text_representation_of_images(images_list)
+    result = text_representation_of_images(os.listdir(folder_dir)[0])
     print("About to print the result")
     print(result)
+    ans = classify_generated_caption(result)
+    return jsonify(ans)
 
-    return result
+
+@app.route('/category_classifier', methods=['POST'])
+def text_classification():
+    print("Inside the category classifier")
+    query = request.data.decode()
+    print(query)
+    category = category_identifier(query)
+    lbyr = l_by_r(query)
+    viewType = type_of_views(query)
+    newsType = news_type(query)
+    propogandaType = type_of_propaganda(query)
+    speechType = hatespeech(query)
+    clickbaitType = clickbait(query)
+    sentiment = sentiment_analysis(query)
+    impKeywords = extract_keywords(query)
+    data = [category, lbyr, viewType, newsType, propogandaType,
+            speechType, clickbaitType, sentiment, impKeywords]
+
+    return jsonify(data)
 
 
 if __name__ == "__main__":

@@ -4,10 +4,13 @@ const cors = require("cors");
 require("dotenv").config();
 
 const userRoutes = require("./routes/userRoutes");
+const newsRoutes = require("./routes/newsRoutes");
 
 const { default: mongoose } = require("mongoose");
 mongoose
-  .connect("mongodb://127.0.0.1:27017/kavach")
+  .connect(
+    "mongodb+srv://adwaitmandge:7rfE8FDix2gzSVm@cluster0.1b6o93r.mongodb.net/?retryWrites=true&w=majority  "
+  )
   .then(() => {
     console.log("Connected to MONGODB successfully");
   })
@@ -20,6 +23,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/user", userRoutes);
+app.use("/api/news/", newsRoutes);
 
 const server = app.listen("4000", () => {
   console.log("ON PORT 4000");
