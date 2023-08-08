@@ -48,6 +48,9 @@ const manipulateDOM = async () => {
           };
 
           console.log(newData);
+          if (newData.newsType != "factual news") {
+            article.style.backgroundColor = "red";
+          }
 
           try {
             const res = await fetch(
@@ -70,7 +73,6 @@ const manipulateDOM = async () => {
           //   data.result.splice(4) == "fake" ||
           //   data.result.splice(4) == 0
           // ) {
-          //   article.style.backgroundColor = "red";
           // } else {
           //   return;
           // }
@@ -115,6 +117,13 @@ const manipulateDOM = async () => {
             };
 
             console.log(newData);
+
+            if (newData.newsType != "factual news") {
+              article.style.backgroundColor = "red";
+            }
+            //else {
+            //   return;
+            // }
 
             try {
               const res = await fetch(

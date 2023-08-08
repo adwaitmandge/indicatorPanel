@@ -18,6 +18,7 @@ import tableDataComplex from "./variables/tableDataComplex.js";
 import ComplexTable from "./components/ComplexTable";
 import { useNavigate } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
+import TwinBarChart from "components/charts/TwinBarChart";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -50,7 +51,9 @@ const Dashboard = () => {
 
       <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
         <TotalSpent />
-        <WeeklyRevenue />
+        {/* <WeeklyRevenue /> */}
+        <TwinBarChart/>
+
       </div>
 
       {/* Tables & Charts */}
