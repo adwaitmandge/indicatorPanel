@@ -50,16 +50,34 @@ export const twitterColumnsDataCheck = [
     accessor: "percentage_fake",
   },
   {
-    Header: "Spreaders",
+    Header: "Possible Spreaders",
     accessor: "spreaders",
   },
   {
-    Header: "Victims",
+    Header: "Possible Victims",
     accessor: "victims",
   },
   {
     Header: "Ideology",
     accessor: "ideology",
+  },
+];
+export const twitterUsersColumnsDataCheck = [
+  {
+    Header: "Name",
+    accessor: "name",
+  },
+  {
+    Header: "Activity",
+    accessor: "activity_on_posts",
+  },
+  {
+    Header: "Views",
+    accessor: "views_posted",
+  },
+  {
+    Header: "Fake%",
+    accessor: "fake_news",
   },
 ];
 

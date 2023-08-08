@@ -2,17 +2,18 @@ import React, { useMemo } from "react";
 import CardMenu from "components/card/CardMenu";
 import Card from "components/card";
 import Checkbox from "components/checkbox";
-
+import { v4 as uuidv4 } from "uuid";
 import {
   useGlobalFilter,
   usePagination,
   useSortBy,
   useTable,
 } from "react-table";
+import { useNavigate } from "react-router-dom";
 
 const TwitterCheckTable = (props) => {
   const { columnsData, tableData } = props;
-
+  const navigate = useNavigate();
   const columns = useMemo(() => columnsData, [columnsData]);
   const data = useMemo(() => tableData, [tableData]);
 
@@ -74,15 +75,19 @@ const TwitterCheckTable = (props) => {
           <tbody {...getTableBodyProps()}>
             {page.map((row, index) => {
               prepareRow(row);
+              const id = uuidv4();
               return (
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
                     if (cell.column.Header === "Name") {
                       data = (
-                        <div className="flex items-center gap-2">
+                        <div
+                          onClick={() => navigate(`/analytics/twitter/${id}`)}
+                          className="flex cursor-pointer items-center gap-2"
+                        >
                           {/* <Checkbox /> */}
-                          <p className="text-sm font-bold text-navy-700 dark:text-white">
+                          <p className=" text-sm font-bold text-navy-700 dark:text-white">
                             {cell.value}
                           </p>
                         </div>
@@ -102,13 +107,13 @@ const TwitterCheckTable = (props) => {
                           {cell.value}{" "}
                         </p>
                       );
-                    } else if (cell.column.Header === "Spreaders") {
+                    } else if (cell.column.Header === "Possible Spreaders") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}
                         </p>
                       );
-                    } else if (cell.column.Header === "Victims") {
+                    } else if (cell.column.Header === "Possible Victims") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}
