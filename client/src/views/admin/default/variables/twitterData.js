@@ -6,7 +6,7 @@ export const twitterData = [
     percentage_fake: 20,
     spreaders: "COM 1",
     victims: "COM 4",
-    ideology: "Progressive Left",
+    ideology: "Commited conservatives",
   },
   {
     id: "73f23143-20c6-4000-b30a-c7cb54842c0c",
@@ -15,7 +15,7 @@ export const twitterData = [
     percentage_fake: 17,
     spreaders: "COM 2",
     victims: "COM 6",
-    ideology: "Progressive Left",
+    ideology: "Ambivalent Right",
   },
   {
     id: "1920872b-9c8f-4899-add0-040884451383",
@@ -24,7 +24,7 @@ export const twitterData = [
     percentage_fake: 15,
     spreaders: "COM 4",
     victims: "COM 1",
-    ideology: "Progressive Left",
+    ideology: "Outsider Left",
   },
   {
     id: "69dbbf5c-289b-4032-88f8-2e19bf73643a",
@@ -33,7 +33,7 @@ export const twitterData = [
     percentage_fake: 14,
     spreaders: "COM 1",
     victims: "COM 5",
-    ideology: "Progressive Left",
+    ideology: "Democratic mainstays",
   },
   {
     id: "6a71604f-8a4f-45a0-926e-676b6da00434",
@@ -42,7 +42,7 @@ export const twitterData = [
     percentage_fake: 13.9,
     spreaders: "COM 8",
     victims: "COM 6",
-    ideology: "Conservative",
+    ideology: "Progressive Left",
   },
   {
     id: "db4fe93a-3eb6-4062-9efd-13822ed30868",

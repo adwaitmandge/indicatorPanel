@@ -41,7 +41,7 @@ const TwitterCheckTable = (props) => {
     <Card extra={"w-full sm:overflow-auto p-4"}>
       <header className="relative flex items-center justify-between">
         <div className="text-xl font-bold text-navy-700 dark:text-white">
-          Check Table
+          Tweet Monitor
         </div>
 
         <CardMenu />

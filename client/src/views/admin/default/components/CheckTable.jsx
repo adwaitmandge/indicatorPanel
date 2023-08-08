@@ -46,7 +46,7 @@ const CheckTable = (props) => {
         <CardMenu />
       </header>
 
-      <div className="mt-8 overflow-x-scroll xl:overflow-x-hidden">
+      <div className=" px- [-10px] mt-8 overflow-x-scroll xl:overflow-x-auto">
         <table
           {...getTableProps()}
           className="w-full"
@@ -78,16 +78,16 @@ const CheckTable = (props) => {
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
-                    if (cell.column.Header === "NAME") {
+                    if (cell.column.Header === "SOCIALS") {
                       data = (
                         <div className="flex items-center gap-2">
-                          <Checkbox />
+                          {/* <Checkbox /> */}
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
                             {cell.value[0]}
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "PROGRESS") {
+                    } else if (cell.column.Header === "ACTIVITY(%)") {
                       data = (
                         <div className="flex items-center">
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -95,14 +95,14 @@ const CheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "QUANTITY") {
+                    } else if (cell.column.Header === "FAKE") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {" "}
                           {cell.value}{" "}
                         </p>
                       );
-                    } else if (cell.column.Header === "DATE") {
+                    } else if (cell.column.Header === "TRENDING TOPICS") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}

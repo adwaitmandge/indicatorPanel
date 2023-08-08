@@ -22,6 +22,7 @@ import Twitter from "views/analytics/Twitter";
 import Instagram from "views/analytics/Instagram";
 import Reddit from "views/analytics/Reddit";
 import TwitterUserAnalytics from "views/userAnalytics/twitterUserAnalytics";
+import TwitterAccountAnalytics from "views/accountAnalytics/TwitterAccountAnalytics";
 
 const routes = [
   {
@@ -66,6 +67,13 @@ const routes = [
     path: "twitter",
     icon: <MdLock className="h-6 w-6" />,
     component: <Twitter />,
+  },
+  {
+    name: "Twitter Account Analytics",
+    layout: "/analytics",
+    path: "twitter/accounts/*",
+    icon: <MdLock className="h-6 w-6" />,
+    component: <TwitterAccountAnalytics />,
   },
   {
     name: "Twitter User Analytics",

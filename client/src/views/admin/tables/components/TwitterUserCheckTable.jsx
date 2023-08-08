@@ -41,7 +41,7 @@ const TwitterUserCheckTable = (props) => {
     <Card extra={"w-full sm:overflow-auto p-4"}>
       <header className="relative flex items-center justify-between">
         <div className="text-xl font-bold text-navy-700 dark:text-white">
-          Check Table
+          Twitter User Anayltics
         </div>
 
         <CardMenu />
@@ -83,7 +83,11 @@ const TwitterUserCheckTable = (props) => {
                     if (cell.column.Header === "Name") {
                       data = (
                         <div
-                          onClick={() => navigate(`/analytics/twitter/${id}`)}
+                          onClick={() =>
+                            navigate(
+                              `/analytics/twitter/accounts/${cell.value}`
+                            )
+                          }
                           className="flex cursor-pointer items-center gap-2"
                         >
                           {/* <Checkbox /> */}

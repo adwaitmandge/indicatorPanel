@@ -81,6 +81,21 @@ export const twitterUsersColumnsDataCheck = [
   },
 ];
 
+export const twitterAccountColumnsDataCheck = [
+  {
+    Header: "Post",
+    accessor: "post",
+  },
+  {
+    Header: "Activity",
+    accessor: "activity",
+  },
+  {
+    Header: "Activity ID",
+    accessor: "activity_id",
+  },
+];
+
 export const instagramColumnsDataCheck = [
   {
     Header: "Name",

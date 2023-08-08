@@ -19,19 +19,19 @@ export const columnsDataDevelopment = [
 
 export const columnsDataCheck = [
   {
-    Header: "NAME",
+    Header: "SOCIALS",
     accessor: "name",
   },
   {
-    Header: "PROGRESS",
+    Header: "ACTIVITY(%)",
     accessor: "progress",
   },
   {
-    Header: "QUANTITY",
+    Header: "FAKE",
     accessor: "quantity",
   },
   {
-    Header: "DATE",
+    Header: "TRENDING TOPICS",
     accessor: "date",
   },
 ];

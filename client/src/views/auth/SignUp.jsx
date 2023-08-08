@@ -42,7 +42,7 @@ export default function SignUp({
       try {
         const body = { name, email, password, confirmPassword };
 
-        const res = await fetch("http://localhost:5000/api/user/", {
+        const res = await fetch("http://localhost:4000/api/user/", {
           method: "POST",
           headers: { "Content-type": "application/json" },
           body: JSON.stringify(body),

@@ -21,6 +21,6 @@ app.use(express.json());
 
 app.use("/api/user", userRoutes);
 
-const server = app.listen("5000", () => {
-  console.log("ON PORT 5000");
+const server = app.listen("4000", () => {
+  console.log("ON PORT 4000");
 });

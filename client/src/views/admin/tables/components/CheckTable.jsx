@@ -78,10 +78,10 @@ const CheckTable = (props) => {
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
-                    if (cell.column.Header === "SOCIAL") {
+                    if (cell.column.Header === "SOCIALS") {
                       data = (
                         <div className="flex items-center gap-2">
-                          <Checkbox />
+                          {/* <Checkbox /> */}
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
                             {cell.value[0]}
                           </p>
@@ -102,7 +102,7 @@ const CheckTable = (props) => {
                           {cell.value}{" "}
                         </p>
                       );
-                    } else if (cell.column.Header === "DATE") {
+                    } else if (cell.column.Header === "TRENDING TOPICS") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}

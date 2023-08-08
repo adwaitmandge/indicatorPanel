@@ -4,29 +4,42 @@ import nltk
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource, reqparse, marshal_with, fields
 from flask_cors import CORS, cross_origin
-
+import random
 import re
 import json
-
-
+import pandas as pd
+import PIL
 import urllib.request
 from PIL import Image
+import pytesseract
+from transformers import pipeline
+import os
+from os import listdir
+
+sales_img_captioning = pipeline(
+    "image-to-text", model="Salesforce/blip-image-captioning-large")
+
 
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'application/json'
 app.app_context().push()
-# CORS(app, support_credentials=True)
+CORS(app)
 api = Api(app)
 
-cors = CORS(resources={
-    r'/*': {
-        'origins': [
-            'http://localhost:3000'
-        ]
-    }
+# cors = CORS(resources={
+#     r'/*': {
+#         'origins': [
+#             'http://localhost:3000',
+#             '*'
+#         ]
+#     }
+# })
+
+cors = CORS(app, resources={
+    r"/imagegenerator": {"origins": "*"}
 })
 
-cors.init_app(app)
+# cors.init_app(app)
 
 # -*- coding: utf-8 -*-
 """fake_news_gpt3_final.ipynb
@@ -58,41 +71,73 @@ nltk.download('punkt')
 #     result = fact_check(data)
 #     return jsonify({"result":result})
 
-
-@app.route('/imagegenerator', methods=['POST'])
-def imageGenerator():
-    print("Inside the image generaotr at the backend")
-    data = request.data
-    print("The request body is", data)
-    print(type(data))
-    finalURL = data.decode()
-    urllib.request.urlretrieve(finalURL, "geeksforgeeks.png")
-    return jsonify({"result": "name"})
+folder_dir = "C:/Users/Adwait/OneDrive/Desktop/builds/kavach/horizon-tailwind-react/flask/images"
 
 
-# ********************************* Registering a user ***********************************
-# ************************************************************************************************
-# @app.route("/register", methods=['POST'])
-# def register():
-#     users = db.users
-#     print("Inside the register function at the backend")
+def images_to_ocr(image_filename):
+    full_image_path = os.path.join(folder_dir, image_filename)
+    img = PIL.Image.open(full_image_path)
+    text = pytesseract.image_to_string(img.convert('L'), lang='eng')
+    return text
+
+
+def image_caption_generation(images):
+    print("Inside icg")
+    result = sales_img_captioning(images)[0]['generated_text']
+    print("After icg")
+    print(result)
+    return result
+
+
+def text_representation_of_images(images_list):
+    result = ""
+    for image_filename in images_list:
+        # ocr_text = images_to_ocr(image_filename)
+        full_image_path = os.path.join(folder_dir, image_filename)
+        caption = image_caption_generation(full_image_path)
+        # combined_text = ocr_text + " " + caption
+        combined_text = caption
+        result += combined_text + "\n"
+    return result
+
+
+# @app.route('/imagegenerator', methods=['POST'])
+# def imageGenerator():
+#     print("Inside the image generaotr at the backend")
 #     data = request.data
-#     res = json.loads(data)
-#     query_user = res["user"]
-#     print(query_user["name"])
-#     username = query_user["name"]
-#     del query_user["name"]
-#     query_user["username"] = username
-#     print("Searching for the user in the database")
-#     query = list(users.find({"username":query_user["username"]}))
-#     if len(query) != 0:
-#         print("USER FOUND!!")
-#         print(list(query))
-#     else:
-#         print("USER DOES NOT EXIST")
-#         inserted_user = dict(users.insert_one(query_user))
-#         print("The inserted user is ")
-#         print(inserted_user)
-#     return jsonify({"MESSAGE":"SUCCESS"})
+#     print("The request body is", data)
+#     print(type(data))
+#     finalURL = data.decode()
+#     num = random.randrange(10000000)
+#     urllib.request.urlretrieve(finalURL, f'/images/{num}.png')
+#     return jsonify({"result": "name"})
+
+@app.route('/imagegenerator', methods=['POST', 'OPTIONS'])
+def imageGenerator():
+    if request.method == 'OPTIONS':
+        # Handle preflight request
+        response = app.make_default_options_response()
+    else:
+        # Handle actual POST request
+        data = request.data
+        finalURL = data.decode()
+        print(finalURL)
+        num = random.randrange(10000000)
+        urllib.request.urlretrieve(
+            finalURL, f'C:/Users/Adwait/OneDrive/Desktop/builds/kavach/horizon-tailwind-react/flask/images/{num}.png')
+        images_list = []
+
+        for images in os.listdir(folder_dir):
+            if (images.endswith(".png")):
+                images_list.append(images)
+
+    # response = jsonify({"result": text_representation_of_images(images_list)})
+    result = text_representation_of_images(images_list)
+    print("About to print the result")
+    print(result)
+
+    return result
+
+
 if __name__ == "__main__":
     app.run(debug=True)
