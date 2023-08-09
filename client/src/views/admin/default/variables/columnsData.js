@@ -38,7 +38,7 @@ export const columnsDataCheck = [
 
 export const twitterColumnsDataCheck = [
   {
-    Header: "Name",
+    Header: "Topic",
     accessor: "name",
   },
   {

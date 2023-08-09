@@ -1,4 +1,4 @@
-from helpers import fact_check, one_word, get_text, category_identifier, l_by_r, type_of_views, type_of_propaganda, news_type, hatespeech, clickbait, sentiment_analysis, extract_keywords
+from helpers import fact_check, one_word, get_text, category_identifier, l_by_r, type_of_views, type_of_propaganda, news_type, hatespeech, clickbait, sentiment_analysis, extract_keywords, transcript_generation
 from newspaper import Article
 import openai
 import nltk
@@ -209,6 +209,16 @@ def text_classification():
             speechType, clickbaitType, sentiment, impKeywords]
 
     return jsonify(data)
+
+
+@app.route('/short_classifier', methods=['POST'])
+def short_classification():
+    print("Inside the short classifier")
+    query = request.data.decode()
+    print(query)
+    result = transcript_generation(query)
+    print("Result is this %%%%%%%% :", result)
+    return
 
 
 if __name__ == "__main__":
