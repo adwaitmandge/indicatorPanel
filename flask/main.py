@@ -217,8 +217,22 @@ def short_classification():
     query = request.data.decode()
     print(query)
     result = transcript_generation(query)
-    print("Result is this %%%%%%%% :", result)
-    return
+    print("The transcript has been generated")
+
+    category = category_identifier(result)
+    lbyr = l_by_r(result)
+    viewType = type_of_views(result)
+    newsType = news_type(result)
+    propogandaType = type_of_propaganda(result)
+    speechType = hatespeech(result)
+    clickbaitType = clickbait(result)
+    sentiment = sentiment_analysis(result)
+    impKeywords = extract_keywords(result)
+    data = [category, lbyr, viewType, newsType, propogandaType,
+            speechType, clickbaitType, sentiment, impKeywords]
+
+    print(data)
+    return jsonify(data)
 
 
 if __name__ == "__main__":

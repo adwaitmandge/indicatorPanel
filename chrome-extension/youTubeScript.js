@@ -6,8 +6,8 @@ const manipulateDOM = async () => {
     console.log("Inside manipulate dom");
     const url = window.location.href;
     console.log(url);
-    const allIDS = url.split("/");
-    const data = allIDS[allIDS.length - 1];
+    const allIDS = url.split("=");
+    const data = allIDS[1];
 
     console.log("The id is ", data);
 

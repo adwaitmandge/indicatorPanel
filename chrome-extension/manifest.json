@@ -21,7 +21,7 @@
             "js":["twitterScript.js"]
         },
         {
-            "matches":["https://www.youtube.com/shorts/*"],
+            "matches":["https://www.youtube.com/*"],
             "js":["youTubeScript.js"]
         },
         {

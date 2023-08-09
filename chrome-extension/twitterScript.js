@@ -17,19 +17,83 @@ const manipulateDOM = async () => {
     console.log(tweetContainer);
 
     for (const article of tweetContainer) {
-      const tweet = article
+      var divChild = document.createElement("div");
+      divChild.style.border = "16px solid #f3f3f3";
+      divChild.style.borderTop = "16px solid #3498db";
+      divChild.style.borderRadius = "50%";
+      divChild.style.width = "40px";
+      divChild.style.height = "40px";
+      divChild.style.animation = "spin 2s linear infinite";
+
+      // Create the @keyframes spin animation
+      var styleSheet = document.styleSheets[0];
+      var keyframes = `@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}`;
+
+      if (styleSheet.insertRule) {
+        styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
+      } else if (styleSheet.addRule) {
+        styleSheet.addRule("@keyframes spin", keyframes);
+      }
+
+      // Append divChild to spanParent
+      var spanParent = document.createElement("span");
+      spanParent.appendChild(divChild);
+
+      article
+        .querySelector("div")
+        .querySelector("div")
+        .children.item(1)
+        .children.item(1)
+        .children.item(1)
+        .appendChild(spanParent);
+
+      const captionTweet = article
         .querySelector("div")
         .querySelector("div")
         .children.item(1)
         .children.item(1)
         .children.item(1)
         .querySelector("span");
-      if (tweet?.innerHTML) {
-        console.log(tweet.innerHTML);
+
+      // const tweetAttributesContainer = article
+      //   .querySelector("div")
+      //   .querySelector("div")
+      //   .children.item(1)
+      //   .children.item(1)
+      //   .children.item(3)
+      //   .querySelector("div");
+
+      // const allTags = tweetAttributesContainer.querySelectorAll("div");
+      // // Select only the first two divs
+      // const commentsContainer = tweetAttributesContainer.querySelector("div");
+      // const comment = commentsContainer
+      //   .querySelector("div")
+      //   .querySelector("div")
+      //   .children.item(1)
+      //   .querySelector("span")
+      //   .querySelector("span")
+      //   .querySelector("span").innerText;
+      // console.log("The comment is", comment);
+
+      // const retweetsContainer = tweetAttributesContainer.children.item(1);
+      // const retweets = retweetsContainer
+      //   .querySelector("div")
+      //   .querySelector("div")
+      //   .children.item(1)
+      //   .querySelector("span")
+      //   .querySelector("span")
+      //   .querySelector("span").innerText;
+      // console.log("The retweets is", retweets);
+
+      if (captionTweet?.innerText) {
+        console.log(captionTweet.innerText);
         try {
           const res = await fetch("http://localhost:5000/category_classifier", {
             method: "POST",
-            body: tweet.innerHTML,
+            body: captionTweet.innerText,
           });
 
           const data = await res.json();
@@ -49,7 +113,32 @@ const manipulateDOM = async () => {
 
           console.log(newData);
           if (newData.newsType != "factual news") {
-            article.style.backgroundColor = "red";
+            // article.style.backgroundColor = "red";
+            spanParent.style.display = "none";
+            const paragraph = document.createElement("p");
+            paragraph.innerHTML = "&#10006;";
+            paragraph.style.fontSize = "40px";
+            const targetElement = article
+              .querySelector("div")
+              .querySelector("div")
+              .children.item(1)
+              .children.item(1)
+              .children.item(1);
+
+            targetElement.appendChild(paragraph);
+          } else {
+            spanParent.style.display = "none";
+            const paragraph = document.createElement("p");
+            paragraph.innerHTML = "&#9989;";
+            paragraph.style.fontSize = "40px";
+            const targetElement = article
+              .querySelector("div")
+              .querySelector("div")
+              .children.item(1)
+              .children.item(1)
+              .children.item(1);
+
+            targetElement.appendChild(paragraph);
           }
 
           try {
@@ -119,11 +208,31 @@ const manipulateDOM = async () => {
             console.log(newData);
 
             if (newData.newsType != "factual news") {
-              article.style.backgroundColor = "red";
+              // article.style.backgroundColor = "red";
+              spanParent.style.display = "none";
+              const paragraph = document.createElement("p");
+              paragraph.innerHTML = "&#10006;";
+              paragraph.style.fontSize = "40px";
+              article
+                .querySelector("div")
+                .querySelector("div")
+                .children.item(1)
+                .children.item(1)
+                .children.item(1)
+                .appendChild(paragraph);
+            } else {
+              spanParent.style.display = "none";
+              const paragraph = document.createElement("p");
+              paragraph.innerHTML = "&#9989;";
+              paragraph.style.fontSize = "40px";
+              article
+                .querySelector("div")
+                .querySelector("div")
+                .children.item(1)
+                .children.item(1)
+                .children.item(1)
+                .appendChild(paragraph);
             }
-            //else {
-            //   return;
-            // }
 
             try {
               const res = await fetch(
