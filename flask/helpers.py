@@ -1,10 +1,13 @@
+import whisper
+import pytube as pt
+from transformers import pipeline
 import nltk
 from newspaper import Article
 import openai
 import nltk
+from youtube_transcript_api import YouTubeTranscriptApi
 import re
 nltk.download('punkt')
-from transformers import pipeline
 
 
 def get_summary(url):
@@ -56,43 +59,59 @@ def one_word(text_piece):
 # **********************************************************************************
 # **********************************************************************************
 
-extract_imp_words=pipeline("token-classification", model="ml6team/keyphrase-extraction-kbir-inspec")
-zero_shot_classfier=pipeline("zero-shot-classification")
+extract_imp_words = pipeline(
+    "token-classification", model="ml6team/keyphrase-extraction-kbir-inspec")
+zero_shot_classfier = pipeline("zero-shot-classification")
+
 
 def get_text(url):
-    article=Article(url)
+    article = Article(url)
     article.download()
     article.parse()
     article.nlp()
-    article_text=article.text
+    article_text = article.text
     return article_text
 
+
 def category_identifier(text):
-    final_classification=zero_shot_classfier(text,candidate_labels=["sports","politics","education","business","entertainment","healthcare and medicine","science and technology","religion","product reviews","projects and tutorials"])
+    final_classification = zero_shot_classfier(text, candidate_labels=[
+                                               "sports", "politics", "education", "business", "entertainment", "healthcare and medicine", "science and technology", "religion", "product reviews", "projects and tutorials"])
     return final_classification['labels'][0]
+
 
 def l_by_r(text):
-    final_classification=zero_shot_classfier(text,candidate_labels=["left_views","right_views"],return_all_scores=True)
+    final_classification = zero_shot_classfier(
+        text, candidate_labels=["left_views", "right_views"], return_all_scores=True)
     return (0.01*(final_classification['scores'][0]/final_classification['scores'][1]))
 
+
 def type_of_views(text):
-    final_classification=zero_shot_classfier(text,candidate_labels=["progessive left","established liberal","democractic mainstays","outsider left","ambivalent right", "populist right", "commited conservatives","faith and flag conservatives"])
+    final_classification = zero_shot_classfier(text, candidate_labels=["progessive left", "established liberal", "democractic mainstays",
+                                               "outsider left", "ambivalent right", "populist right", "commited conservatives", "faith and flag conservatives"])
     return final_classification['labels'][0]
+
 
 def news_type(text):
-    final_classification=zero_shot_classfier(text,candidate_labels=["misinformation or fake news","factual news"])
+    final_classification = zero_shot_classfier(
+        text, candidate_labels=["misinformation or fake news", "factual news"])
     return final_classification['labels'][0]
 
+
 def type_of_propaganda(text):
-    final_classification=zero_shot_classfier(text,candidate_labels=["Presenting Irrelevant Data","Stereotyping","Misrepresentation of Someone's Position,","Whataboutism","Causal Oversimplification","Obfuscation, Intentional vagueness, Confusion","Appeal to authority","Black-and-white Fallacy","Dictatorship","Name calling or labeling" ,"Loaded Language","Exaggeration or Minimisation"," Flag-waving","Doubt","Appeal to fear/prejudice","Thought-terminating cliché","Bandwagon","Reductio ad hitlerum"])
+    final_classification = zero_shot_classfier(text, candidate_labels=["Presenting Irrelevant Data", "Stereotyping", "Misrepresentation of Someone's Position,", "Whataboutism", "Causal Oversimplification", "Obfuscation, Intentional vagueness, Confusion", "Appeal to authority",
+                                               "Black-and-white Fallacy", "Dictatorship", "Name calling or labeling", "Loaded Language", "Exaggeration or Minimisation", " Flag-waving", "Doubt", "Appeal to fear/prejudice", "Thought-terminating cliché", "Bandwagon", "Reductio ad hitlerum"])
     return final_classification['labels'][0:2]
 
+
 def hatespeech(text):
-    final_calssification=zero_shot_classfier(text,candidate_labels=['normal','offensive','hate speech'])
+    final_calssification = zero_shot_classfier(
+        text, candidate_labels=['normal', 'offensive', 'hate speech'])
     return final_calssification['labels'][0]
-    
+
+
 def clickbait(text):
-    final_calssification=zero_shot_classfier(text,candidate_labels=['not clickbait','clickbait'],return_all_scores=True)
+    final_calssification = zero_shot_classfier(
+        text, candidate_labels=['not clickbait', 'clickbait'], return_all_scores=True)
     return final_calssification['scores'][1]
 
 
@@ -101,7 +120,35 @@ def sentiment_analysis(text):
     prediction = classifier(text)
     return prediction
 
+
 def extract_keywords(text):
-    data=extract_imp_words(text)
+    data = extract_imp_words(text)
     keywords = [entry['word'] for entry in data]
     return keywords
+
+# *****************************************************************************
+# *****************************************************************************
+# *****************************************************************************
+
+
+def create_yt_transscript(url):
+    yt = pt.YouTube(url)
+    stream = yt.streams.filter(only_audio=True)[0]
+    stream.download(filename="audio_english.mp3")
+    model = whisper.load_model("medium")
+    result = model.transcribe(
+        "audio_english.mp3", ffmpeg_path="C:/Program Files/ffmpeg-2023-08-07-git-d295b6b693-full_build")
+    return result
+
+
+def transcript_generation(video_id):
+    # YouTubeTranscriptApi.get_transcript(video_id)
+    # transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+    # for transcript in transcript_list:
+    #     print("this is fetching data :", transcript.fetch())
+    # return transcript_list
+    data = YouTubeTranscriptApi.get_transcript(video_id)
+    transscript = [entry['text'] for entry in data]
+    transscript = ' '.join(transscript)
+    print(transscript)
+    return transscript

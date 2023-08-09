@@ -21,6 +21,10 @@
             "js":["twitterScript.js"]
         },
         {
+            "matches":["https://www.youtube.com/shorts/*"],
+            "js":["youTubeScript.js"]
+        },
+        {
             "matches":["https://www.instagram.com/"],
             "js":["instaScript.js"]
         }

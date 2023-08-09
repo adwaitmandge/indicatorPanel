@@ -80,7 +80,7 @@ const TwitterCheckTable = (props) => {
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
-                    if (cell.column.Header === "Name") {
+                    if (cell.column.Header === "Topic") {
                       data = (
                         <div
                           onClick={() => navigate(`/analytics/twitter/${id}`)}
