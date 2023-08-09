@@ -3,14 +3,23 @@ import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import { MdBarChart } from "react-icons/md";
 
-const TwinBarChart = () => {
+const DashBoardTwin= () => {
+    
   const [state, setState] = useState({
     options: {
       chart: {
         id: "basic-bar",
       },
       xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+        categories: ["Sports",
+        "Politics",
+        "Education",
+        "Entertainment",
+        "Business",
+        "Health",
+        "Technology",
+        "Religion",
+        "Other"],
       },
     },
     series: [
@@ -51,4 +60,4 @@ const TwinBarChart = () => {
   );
 };
 
-export default TwinBarChart;
+export default DashBoardTwin;

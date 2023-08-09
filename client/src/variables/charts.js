@@ -103,8 +103,30 @@ export const barChartOptionsDailyTraffic = {
 };
 
 export const pieChartOptions = {
-  labels: ["Instagram", "Facebook", "Reddit"],
-  colors: ["#4318FF", "#6AD2FF", "#030C19"],
+  labels: [
+    "Sports",
+    "Politics",
+    "Education",
+    "Entertainment",
+    "Business",
+    "Health",
+    "Technology",
+    "Religion",
+    "Other",
+  ],
+  colors: [
+    "#4318FF",
+    // "#6AD2FF",
+    "#73C6B6",
+    // "#030C19",
+    "#F1C40F",
+    "#4318FF",
+    "#6AD2FF",
+    "#030C19",
+    "#4318FF",
+    "#6AD2FF",
+    "#030C19",
+  ],
   chart: {
     width: "50px",
   },
@@ -133,7 +155,16 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: [
+      "#F4F4F4",
+      "#EFF4FB",
+      "#6AD2AA",
+      "#030C19",
+      "#FFFFFF",
+      "#FCF5CF",
+      "#DADADA",
+      "#7D3C98",
+    ],
   },
   tooltip: {
     enabled: true,
@@ -146,7 +177,7 @@ export const pieChartOptions = {
   },
 };
 
-export const pieChartData = [63, 25, 12];
+export const pieChartData = [44, 55, 13, 43, 22, 10, 20, 30, 40];
 
 export const barChartDataWeeklyRevenue = [
   {
@@ -198,15 +229,15 @@ export const barChartOptionsWeeklyRevenue = {
   },
   xaxis: {
     categories: [
-      "Celebs",
+      "Sports",
       "Politics",
       "Education",
+      "Entertainment",
+      "Business",
       "Health",
       "Technology",
       "Religion",
-      "Fashion",
-      "Economy",
-      "General",
+      "Other",
     ],
     show: false,
     labels: {

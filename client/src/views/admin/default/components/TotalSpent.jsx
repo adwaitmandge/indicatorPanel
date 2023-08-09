@@ -35,8 +35,8 @@ const TotalSpent = () => {
           <div className="flex flex-col items-start">
             <p className="mt-2 text-sm text-gray-600">Fallacy Rate</p>
             <div className="flex flex-row items-center justify-center">
-              <MdArrowDropDown className="font-medium text-green-500" />
-              <p className="text-sm font-bold text-green-500"> -2.45% </p>
+              <MdArrowDropDown className="font-medium text-red-500" />
+              <p className="text-sm font-bold text-red-500"> -2.45% </p>
             </div>
           </div>
         </div>
