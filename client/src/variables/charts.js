@@ -26,7 +26,7 @@ export const barChartOptionsDailyTraffic = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["Instagram", "Facebook", "Reddit", "Twitter"],
+    categories: ["Instagram", "Reddit", "Twitter"],
     show: false,
     labels: {
       show: true,
@@ -103,8 +103,30 @@ export const barChartOptionsDailyTraffic = {
 };
 
 export const pieChartOptions = {
-  labels: ["Instagram", "Facebook", "Reddit"],
-  colors: ["#4318FF", "#6AD2FF", "#030C19"],
+  labels: [
+    "Sports",
+    "Politics",
+    "Education",
+    "Entertainment",
+    "Business",
+    "Health",
+    "Technology",
+    "Religion",
+    "Other",
+  ],
+  colors: [
+    "#4318FF",
+    // "#6AD2FF",
+    "#73C6B6",
+    // "#030C19",
+    "#F1C40F",
+    "#4318FF",
+    "#6AD2FF",
+    "#030C19",
+    "#4318FF",
+    "#000000",
+    "#bbbbbb",
+  ],
   chart: {
     width: "50px",
   },
@@ -133,7 +155,17 @@ export const pieChartOptions = {
     },
   },
   fill: {
-    colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+    colors: [
+      "#5b93aa",
+      "#CF8874",
+      "#6AD2AA",
+      "#d3f5f5",
+      "#FFFFFF",
+      "#FCF5CF",
+      "#DADADA",
+      // "#d3f5f5"
+      // "#7D3C98",
+    ],
   },
   tooltip: {
     enabled: true,
@@ -146,7 +178,7 @@ export const pieChartOptions = {
   },
 };
 
-export const pieChartData = [63, 25, 12];
+export const pieChartData = [44, 55, 13, 43, 22, 10, 20, 30, 40];
 
 export const barChartDataWeeklyRevenue = [
   {
@@ -198,15 +230,15 @@ export const barChartOptionsWeeklyRevenue = {
   },
   xaxis: {
     categories: [
-      "Celebs",
+      "Sports",
       "Politics",
       "Education",
+      "Entertainment",
+      "Business",
       "Health",
       "Technology",
       "Religion",
-      "Fashion",
-      "Economy",
-      "General",
+      "Other",
     ],
     show: false,
     labels: {

@@ -11,7 +11,7 @@ const newsSchema = new mongoose.Schema({
   clickbaitType: Number,
   sentiment: [
     {
-      label: String,
+      label: String,  
       score: Number,
     },
   ],

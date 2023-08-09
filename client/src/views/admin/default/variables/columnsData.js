@@ -68,16 +68,20 @@ export const twitterUsersColumnsDataCheck = [
     accessor: "name",
   },
   {
-    Header: "Activity",
-    accessor: "activity_on_posts",
+    Header: "Retweets",
+    accessor: "retweets",
+  },
+  {
+    Header: "Fake(%)",
+    accessor: "fake_news",
+  },
+  {
+    Header: "Comments",
+    accessor: "comments",
   },
   {
     Header: "Views",
     accessor: "views_posted",
-  },
-  {
-    Header: "Fake%",
-    accessor: "fake_news",
   },
 ];
 

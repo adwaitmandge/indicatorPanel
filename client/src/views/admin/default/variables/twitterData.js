@@ -1,7 +1,7 @@
 export const twitterData = [
   {
     id: "51e0b3d9-4e64-453a-acd0-91e1e7f99bc5",
-    name: "Barack Obama ARRESTED",
+    name: "Taylor Swift on a world tour",
     number_of_posts: 100,
     percentage_fake: 20,
     spreaders: "COM 1",
@@ -10,7 +10,7 @@ export const twitterData = [
   },
   {
     id: "73f23143-20c6-4000-b30a-c7cb54842c0c",
-    name: "Mar-A-Lago Destroyed ",
+    name: "Rushi Sunak visits America",
     number_of_posts: 200,
     percentage_fake: 17,
     spreaders: "COM 2",
@@ -19,7 +19,7 @@ export const twitterData = [
   },
   {
     id: "1920872b-9c8f-4899-add0-040884451383",
-    name: "78 Year Old CIA Agent",
+    name: "Tom Cruise to star in a TV show",
     number_of_posts: 500,
     percentage_fake: 15,
     spreaders: "COM 4",
@@ -28,7 +28,7 @@ export const twitterData = [
   },
   {
     id: "69dbbf5c-289b-4032-88f8-2e19bf73643a",
-    name: "FBI Uncovers Evidence ",
+    name: "Trump's visit to India",
     number_of_posts: 350,
     percentage_fake: 14,
     spreaders: "COM 1",
@@ -37,7 +37,7 @@ export const twitterData = [
   },
   {
     id: "6a71604f-8a4f-45a0-926e-676b6da00434",
-    name: "Obama Goes To G20 Summit",
+    name: "X to change back to blue bird",
     number_of_posts: 150,
     percentage_fake: 13.9,
     spreaders: "COM 8",
@@ -46,7 +46,7 @@ export const twitterData = [
   },
   {
     id: "db4fe93a-3eb6-4062-9efd-13822ed30868",
-    name: "Kardashians donate whopping sum to Las Vegas",
+    name: "Selena Gomez donate whopping sum to Las Vegas",
     number_of_posts: 250,
     percentage_fake: 12.8,
     spreaders: "COM 11",
@@ -55,7 +55,7 @@ export const twitterData = [
   },
   {
     id: "a5f82537-41f6-40f6-bd10-12971fd463a6",
-    name: "White House Chef Quits Because Trump Has Only Eaten Fast Food For 6 Months",
+    name: "White House visited by Indian Man",
     number_of_posts: 450,
     percentage_fake: 12,
     spreaders: "COM 14",
@@ -64,7 +64,7 @@ export const twitterData = [
   },
   {
     id: "bfd8e23b-54d6-4a9c-b31b-e5b5b3db171c",
-    name: "Denzel Washington hit by Facebook fake news story",
+    name: "No Funding by US government ",
     number_of_posts: 320,
     percentage_fake: 11.8,
     spreaders: "COM 16",
@@ -73,7 +73,7 @@ export const twitterData = [
   },
   {
     id: "bfd8e23b-54d6-4a9c-b31b-e5b5b3db171c",
-    name: "Contact Support",
+    name: "Kanye west fails to pay for child support",
     number_of_posts: 180,
     percentage_fake: 11.5,
     spreaders: "COM 18",
@@ -82,7 +82,7 @@ export const twitterData = [
   },
   {
     id: "626fbe56-f572-4d74-9a3e-b74155127471",
-    name: "John Kerry Facing Prison",
+    name: "Special Cameo of Angelena Jolie in TV show friends",
     number_of_posts: 700,
     percentage_fake: 11,
     spreaders: ".COM 21",
@@ -91,7 +91,7 @@ export const twitterData = [
   },
   {
     id: "89634874-b616-44a0-95f7-9299467bf8d8",
-    name: "Sarah Palin In A Coma After Hit And Run",
+    name: "Eminem new song is a huge flop",
     number_of_posts: 1000,
     percentage_fake: 10,
     spreaders: "COM8",
@@ -100,7 +100,7 @@ export const twitterData = [
   },
   {
     id: "a4a49607-09fb-4b85-a189-8e212afc2f1e",
-    name: "Bumble Bee Foods charged after man cooked with tuna",
+    name: "Burger King increases tax on burgers",
     number_of_posts: 800,
     percentage_fake: 9,
     spreaders: "COM 9",
@@ -109,7 +109,7 @@ export const twitterData = [
   },
   {
     id: "50a1dfe7-d3be-4d9c-a911-6bc9b55b4cda",
-    name: "Information for the Nation",
+    name:"10 year old kid gets a PHD",
     number_of_posts: 450,
     percentage_fake: 8.5,
     spreaders: "COM 12",
@@ -118,7 +118,7 @@ export const twitterData = [
   },
   {
     id: "e9069b2b-e0b0-48c6-b97a-dfcb5d781f81",
-    name: "American News is under construction",
+    name: "American Weather is most affected in 2023 by global warming ",
     number_of_posts: 550,
     percentage_fake: 8,
     spreaders: "COM 14",
@@ -127,7 +127,7 @@ export const twitterData = [
   },
   {
     id: "829d9333-1151-44f6-b8bc-08bd6efc1f93",
-    name: "Obama Secretly Flees US â€“ Leaves Stunning Evidence Behind",
+    name: "Zendaya and Tom Holland Breakup",
     number_of_posts: 300,
     percentage_fake: 6,
     spreaders: "COM 20",

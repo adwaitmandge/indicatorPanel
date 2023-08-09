@@ -5,6 +5,7 @@ require("dotenv").config();
 
 const userRoutes = require("./routes/userRoutes");
 const newsRoutes = require("./routes/newsRoutes");
+const chartRoutes = require("./routes/chartRoutes");
 
 const { default: mongoose } = require("mongoose");
 mongoose
@@ -24,6 +25,7 @@ app.use(express.json());
 
 app.use("/api/user", userRoutes);
 app.use("/api/news/", newsRoutes);
+app.use("/api/charts/", chartRoutes);
 
 const server = app.listen("4000", () => {
   console.log("ON PORT 4000");

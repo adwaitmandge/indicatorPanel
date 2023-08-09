@@ -3,14 +3,24 @@ import React, { useState } from "react";
 import Chart from "react-apexcharts";
 import { MdBarChart } from "react-icons/md";
 
-const TwinBarChart = () => {
+const DashBoardTwin = () => {
   const [state, setState] = useState({
     options: {
       chart: {
         id: "basic-bar",
       },
       xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+        categories: [
+          "Sports",
+          "Politics",
+          "Education",
+          "Entertainment",
+          "Business",
+          "Health",
+          "Technology",
+          "Religion",
+          "Other",
+        ],
       },
     },
     series: [
@@ -29,7 +39,7 @@ const TwinBarChart = () => {
     <Card extra="flex flex-col bg-white w-full rounded-3xl py-6 px-2 text-center">
       <div className="mb-auto flex items-center justify-between px-6">
         <h2 className="text-lg font-bold text-navy-700 dark:text-white">
-          Fake/Real Vs Category
+          Fake-Real Vs Category
         </h2>
         <button className="!linear z-[1] flex items-center justify-center rounded-lg bg-lightPrimary p-2 text-brand-500 !transition !duration-200 hover:bg-gray-100 active:bg-gray-200 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10">
           <MdBarChart className="h-6 w-6" />
@@ -51,4 +61,4 @@ const TwinBarChart = () => {
   );
 };
 
-export default TwinBarChart;
+export default DashBoardTwin;
