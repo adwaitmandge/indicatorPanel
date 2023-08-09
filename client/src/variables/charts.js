@@ -26,7 +26,7 @@ export const barChartOptionsDailyTraffic = {
     theme: "dark",
   },
   xaxis: {
-    categories: ["Instagram", "Facebook", "Reddit", "Twitter"],
+    categories: ["Instagram", "Reddit", "Twitter"],
     show: false,
     labels: {
       show: true,
@@ -124,8 +124,8 @@ export const pieChartOptions = {
     "#6AD2FF",
     "#030C19",
     "#4318FF",
-    "#6AD2FF",
-    "#030C19",
+    "#000000",
+    "#bbbbbb",
   ],
   chart: {
     width: "50px",
@@ -156,14 +156,15 @@ export const pieChartOptions = {
   },
   fill: {
     colors: [
-      "#F4F4F4",
-      "#EFF4FB",
+      "#5b93aa",
+      "#CF8874",
       "#6AD2AA",
-      "#030C19",
+      "#d3f5f5",
       "#FFFFFF",
       "#FCF5CF",
       "#DADADA",
-      "#7D3C98",
+      // "#d3f5f5"
+      // "#7D3C98",
     ],
   },
   tooltip: {

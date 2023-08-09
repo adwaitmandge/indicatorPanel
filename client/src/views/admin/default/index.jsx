@@ -19,7 +19,7 @@ import ComplexTable from "./components/ComplexTable";
 import { useNavigate } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import TwinBarChart from "components/charts/TwinBarChart";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import DashBoardTwin from "components/charts/DashBoardTwin";
 import axios from "axios";
 const Dashboard = () => {
@@ -68,9 +68,9 @@ const Dashboard = () => {
   }, []);
   console.log("in the twitter page", fakeCounts, realCounts);
 
-return loading ? (
+  return loading ? (
     <div>Loading...</div>
-  ) :(
+  ) : (
     <div>
       {/* Card widget */}
 
@@ -79,13 +79,13 @@ return loading ? (
           pathname={"/analytics/twitter"}
           icon={<SocialIcon network="twitter" />}
           title={"Twitter"}
-          subtitle={"6.9%"}
+          subtitle={"7.9%"}
         />
         <Widget
           pathname={"/analytics/instagram"}
           icon={<SocialIcon network="instagram" />}
           title={"Instagram"}
-          subtitle={"7.12%"}
+          subtitle={"2.1%"}
         />
         <Widget
           pathname={"/analytics/reddit"}
@@ -100,13 +100,9 @@ return loading ? (
       <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
         <TotalSpent />
         {/* <WeeklyRevenue /> */}
-                {twitterDataWeeklyRevenue && (
-                  <DashBoardTwin
-                    fakeCounts={fakeCounts}
-                    realCounts={realCounts}
-                  />
-                )}
-
+        {twitterDataWeeklyRevenue && (
+          <DashBoardTwin fakeCounts={fakeCounts} realCounts={realCounts} />
+        )}
       </div>
 
       {/* Tables & Charts */}
@@ -128,7 +124,6 @@ return loading ? (
         </div>
 
         {/* Complex Table , Task & Calendar */}
-
       </div>
     </div>
   );

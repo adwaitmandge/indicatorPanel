@@ -6,22 +6,16 @@ const tableDataCheck = [
     progress: 35.4,
   },
   {
-    name: ["Facebook", true],
-    quantity: 1024,
-    date: "#elonmuskx",
-    progress: 25,
-  },
-  {
     name: ["Reddit", true],
     quantity: 858,
     date: "r/indiaspeaks",
-    progress: 100,
+    progress: 10,
   },
   {
     name: ["Instagram", false],
     quantity: 2458,
     date: "#ihatebecky",
-    progress: 75.5,
+    progress: 60,
   },
 ];
 

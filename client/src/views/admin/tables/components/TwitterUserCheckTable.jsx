@@ -61,7 +61,7 @@ const TwitterUserCheckTable = (props) => {
                 {headerGroup.headers.map((column, index) => (
                   <th
                     {...column.getHeaderProps(column.getSortByToggleProps())}
-                    className="border-b border-gray-200 pr-16 pb-[10px] text-start dark:!border-navy-700"
+                    className="border-b border-gray-200 pb-[10px] pr-16 text-start dark:!border-navy-700"
                     key={index}
                   >
                     <div className="text-xs font-bold tracking-wide text-gray-600 lg:text-xs">
@@ -96,7 +96,7 @@ const TwitterUserCheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "Activity") {
+                    } else if (cell.column.Header === "Views") {
                       data = (
                         <div className="flex items-center">
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -104,26 +104,20 @@ const TwitterUserCheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "Views") {
+                    } else if (cell.column.Header === "Fake(%)") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {" "}
                           {cell.value}{" "}
                         </p>
                       );
-                    } else if (cell.column.Header === "Fake%") {
+                    } else if (cell.column.Header === "Comments") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}
                         </p>
                       );
-                    } else if (cell.column.Header === "Victims") {
-                      data = (
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">
-                          {cell.value}
-                        </p>
-                      );
-                    } else if (cell.column.Header === "Ideology") {
+                    } else if (cell.column.Header === "Retweets") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {cell.value}
@@ -134,7 +128,7 @@ const TwitterUserCheckTable = (props) => {
                       <td
                         {...cell.getCellProps()}
                         key={index}
-                        className="pt-[14px] pb-[16px] sm:text-[14px]"
+                        className="pb-[16px] pt-[14px] sm:text-[14px]"
                       >
                         {data}
                       </td>
