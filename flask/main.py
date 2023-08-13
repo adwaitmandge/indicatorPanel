@@ -82,6 +82,11 @@ def news_type(text):
     return final_classification['labels'][0]
 
 
+@app.route('/', methods=['POST'])
+def homeRoute():
+    return "Hello from Flask"
+
+
 @app.route('/classify', methods=['POST'])
 def classifier():
     print("Inside the classifier")
