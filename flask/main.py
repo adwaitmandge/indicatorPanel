@@ -82,7 +82,7 @@ def news_type(text):
     return final_classification['labels'][0]
 
 
-@app.route('/', methods=['POST'])
+@app.route('/')
 def homeRoute():
     return "Hello from Flask"
 
