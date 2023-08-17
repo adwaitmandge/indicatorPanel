@@ -95,7 +95,7 @@ export const twitterAccountColumnsDataCheck = [
     accessor: "activity",
   },
   {
-    Header: "Activity ID",
+    Header: "Community-ID",
     accessor: "activity_id",
   },
 ];
