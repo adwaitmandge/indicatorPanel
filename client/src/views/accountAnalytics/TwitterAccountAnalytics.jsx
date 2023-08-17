@@ -35,7 +35,7 @@ const TwitterAccountAnalytics = () => {
               Account Name
             </p>
             <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-              sherry0
+              Kaushik7894
             </h4>
           </div>
         </Card>
@@ -91,7 +91,7 @@ const TwitterAccountAnalytics = () => {
               Avg No. of Posts
             </p>
             <h4 className="text-xl font-bold text-navy-700 dark:text-white">
-              1312
+              116
             </h4>
           </div>
         </Card>
